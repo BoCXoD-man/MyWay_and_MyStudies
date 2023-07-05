@@ -1,7 +1,12 @@
+Capters:
+
+[375. Guess Number Higher or Lower II](#375)
+[1480. Running Sum of 1d Array](#1480)
+[1672. Richest Customer Wealth](#1672)
 
 ======================================================================================================
 
-375. Guess Number Higher or Lower II
+375. Guess Number Higher or Lower II (#375)
 
     We are playing the Guessing Game. The game will work as follows:
 
@@ -55,7 +60,7 @@
 
 ======================================================================================================
 
-1480. Running Sum of 1d Array
+1480. Running Sum of 1d Array (#1480)
     Easy
     6.9K
     309
@@ -97,7 +102,7 @@
 
 ======================================================================================================
 
-1672. Richest Customer Wealth
+1672. Richest Customer Wealth (#1672)
 
     You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 

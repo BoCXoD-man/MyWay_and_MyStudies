@@ -1,20 +1,21 @@
-Capters:
+Сhapters:
 
-[375. Guess Number Higher or Lower II](#375)
-[1480. Running Sum of 1d Array](#1480)
-[1672. Richest Customer Wealth](#1672)
+- 375 [Guess Number Higher or Lower II](#guess-number-higher-or-lower-ii)
+- 1480 [Running Sum of 1d Array](#running-sum-of-1d-array)
+- 1672 [Richest Customer Wealth](#richest-customer-wealth)
 
-======================================================================================================
 
-375. Guess Number Higher or Lower II (#375)
+<hr>
 
-    We are playing the Guessing Game. The game will work as follows:
+## Guess Number Higher or Lower II
 
-        I pick a number between 1 and n.
-        You guess a number.
-        If you guess the right number, you win the game.
-        If you guess the wrong number, then I will tell you whether the number I picked is higher or lower, and you will continue guessing.
-        Every time you guess a wrong number x, you will pay x dollars. If you run out of money, you lose the game.
+We are playing the Guessing Game. The game will work as follows:
+
+    I pick a number between 1 and n.
+    You guess a number.
+    If you guess the right number, you win the game.
+    If you guess the wrong number, then I will tell you whether the number I picked is higher or lower, and you will continue guessing.
+    Every time you guess a wrong number x, you will pay x dollars. If you run out of money, you lose the game.
 
     Given a particular n, return the minimum amount of money you need to guarantee a win regardless of what number I pick.
 
@@ -42,6 +43,7 @@ Capters:
 
     # My Decision:
 
+```python
     class Solution(object):
     def getMoneyAmount(self, n):
         """
@@ -57,20 +59,15 @@ Capters:
                     dp[x+1][start+length-1] if x < start+length-1 else 0)
                     dp[start][start+length-1] = min(dp[start][start+length-1], cost)
         return dp[1][n]
+```
 
-======================================================================================================
+<hr>
 
-1480. Running Sum of 1d Array (#1480)
-    Easy
-    6.9K
-    309
-    Companies
+## Running Sum of 1d Array
 
     Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
 
     Return the running sum of nums.
-
-    
 
     Example 1:
 
@@ -85,7 +82,7 @@ Capters:
     Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
 
     # My Decision:
-
+```python
     class Solution(object):
         def runningSum(self, nums):
 
@@ -99,10 +96,11 @@ Capters:
                 result.append(result[i-1] + nums[i])
 
             return result
+```
 
-======================================================================================================
+<hr>
 
-1672. Richest Customer Wealth (#1672)
+## Richest Customer Wealth
 
     You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 
@@ -133,7 +131,7 @@ Capters:
     Output: 17
 
     # My Decision:
-
+```python
     class Solution(object):
         def maximumWealth(self, accounts):
             """
@@ -150,6 +148,6 @@ Capters:
                     result = count_summ
 
             return result
+```
 
-======================================================================================================
-
+<hr>

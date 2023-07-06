@@ -1,25 +1,28 @@
-Сhapters:
+### Сhapters:
 
 - 375 [Guess Number Higher or Lower II](#guess-number-higher-or-lower-ii)
+- 412 [Fizz Buzz](#fizz-buzz)
+- 1342 [Number of Steps to Reduce a Number to Zero](#number-of-steps-to-reduce-a-number-to-zero)
 - 1480 [Running Sum of 1d Array](#running-sum-of-1d-array)
 - 1672 [Richest Customer Wealth](#richest-customer-wealth)
 
-
+<hr>
 <hr>
 
 ## Guess Number Higher or Lower II
+Difficulty: Medium
 
 We are playing the Guessing Game. The game will work as follows:
 
-    I pick a number between 1 and n.
-    You guess a number.
-    If you guess the right number, you win the game.
-    If you guess the wrong number, then I will tell you whether the number I picked is higher or lower, and you will continue guessing.
-    Every time you guess a wrong number x, you will pay x dollars. If you run out of money, you lose the game.
+I pick a number between 1 and n.
+You guess a number.
+If you guess the right number, you win the game.
+If you guess the wrong number, then I will tell you whether the number I picked is higher or lower, and you will continue guessing.
+Every time you guess a wrong number x, you will pay x dollars. If you run out of money, you lose the game.
 
-    Given a particular n, return the minimum amount of money you need to guarantee a win regardless of what number I pick.
+Given a particular n, return the minimum amount of money you need to guarantee a win regardless of what number I pick.
 
-    Example 1:
+Example 1:
 
     Input: n = 10
     Output: 16
@@ -41,7 +44,7 @@ We are playing the Guessing Game. The game will work as follows:
                 - If my number is higher, it must be 2. Guess 2. Your total is $7 + $3 + $1 = $11.
     The worst case in all these scenarios is that you pay $16. Hence, you only need $16 to guarantee a win.
 
-    # My Decision:
+# My Decision:
 
 ```python
     class Solution(object):
@@ -60,28 +63,30 @@ We are playing the Guessing Game. The game will work as follows:
                     dp[start][start+length-1] = min(dp[start][start+length-1], cost)
         return dp[1][n]
 ```
-
+<hr>
 <hr>
 
 ## Running Sum of 1d Array
+Difficulty: Easy
 
-    Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
 
-    Return the running sum of nums.
+Return the running sum of nums.
 
-    Example 1:
+Example 1:
 
-    Input: nums = [1,2,3,4]
-    Output: [1,3,6,10]
-    Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
+Input: nums = [1,2,3,4]
+Output: [1,3,6,10]
+Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
 
-    Example 2:
+Example 2:
 
-    Input: nums = [1,1,1,1,1]
-    Output: [1,2,3,4,5]
-    Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
+Input: nums = [1,1,1,1,1]
+Output: [1,2,3,4,5]
+Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
 
-    # My Decision:
+# My Decision:
+
 ```python
     class Solution(object):
         def runningSum(self, nums):
@@ -97,16 +102,17 @@ We are playing the Guessing Game. The game will work as follows:
 
             return result
 ```
-
+<hr>
 <hr>
 
 ## Richest Customer Wealth
+Difficulty: Easy
 
-    You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 
-    A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
+A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
 
-    Example 1:
+Example 1:
 
     Input: accounts = [[1,2,3],[3,2,1]]
     Output: 6
@@ -115,7 +121,7 @@ We are playing the Guessing Game. The game will work as follows:
     2nd customer has wealth = 3 + 2 + 1 = 6
     Both customers are considered the richest with a wealth of 6 each, so return 6.
 
-    Example 2:
+Example 2:
 
     Input: accounts = [[1,5],[7,3],[3,5]]
     Output: 10
@@ -125,12 +131,13 @@ We are playing the Guessing Game. The game will work as follows:
     3rd customer has wealth = 8
     The 2nd customer is the richest with a wealth of 10.
 
-    Example 3:
+Example 3:
 
     Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
     Output: 17
 
-    # My Decision:
+# My Decision:
+
 ```python
     class Solution(object):
         def maximumWealth(self, accounts):
@@ -151,3 +158,113 @@ We are playing the Guessing Game. The game will work as follows:
 ```
 
 <hr>
+<hr>
+
+## Fizz Buzz
+Difficulty: Easy
+
+Given an integer n, return a string array answer (1-indexed) where:
+
+answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+answer[i] == "Fizz" if i is divisible by 3.
+answer[i] == "Buzz" if i is divisible by 5.
+answer[i] == i (as a string) if none of the above conditions are true.
+
+Example 1:
+
+    Input: n = 3
+    Output: ["1","2","Fizz"]
+
+Example 2:
+
+    Input: n = 5
+    Output: ["1","2","Fizz","4","Buzz"]
+
+Example 3:
+
+    Input: n = 15
+    Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+
+```python
+class Solution(object):
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        result = []
+        for i in range(n):
+            str_ = ''
+            if (i+1) % 3 == 0 and (i+1) % 5 == 0:
+                str_ += 'FizzBuzz'
+            elif (i+1) % 3 == 0:
+                str_ += 'Fizz'
+            elif (i+1) % 5 == 0:
+                str_ += 'Buzz'
+            else:
+                str_ += str((i+1))
+            result.append(str_) 
+        return result 
+```
+<hr>
+<hr>
+
+## Number of Steps to Reduce a Number to Zero
+Difficulty: Easy
+
+Given an integer num, return the number of steps to reduce it to zero.
+
+In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+
+Example 1:
+
+    Input: num = 14
+    Output: 6
+    Explanation: 
+    Step 1) 14 is even; divide by 2 and obtain 7. 
+    Step 2) 7 is odd; subtract 1 and obtain 6.
+    Step 3) 6 is even; divide by 2 and obtain 3. 
+    Step 4) 3 is odd; subtract 1 and obtain 2. 
+    Step 5) 2 is even; divide by 2 and obtain 1. 
+    Step 6) 1 is odd; subtract 1 and obtain 0.
+
+Example 2:
+
+    Input: num = 8
+    Output: 4
+    Explanation: 
+    Step 1) 8 is even; divide by 2 and obtain 4. 
+    Step 2) 4 is even; divide by 2 and obtain 2. 
+    Step 3) 2 is even; divide by 2 and obtain 1. 
+    Step 4) 1 is odd; subtract 1 and obtain 0.
+
+Example 3:
+
+    Input: num = 123
+    Output: 12
+
+ 
+
+Constraints:
+
+    0 <= num <= 106
+
+
+```python
+class Solution(object):
+    def numberOfSteps(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        steps = 0
+        while num != 0:
+            if num % 2 == 0:
+                num = num/2
+                steps += 1
+            else:
+                num = num -1
+                steps += 1
+
+        return steps
+```

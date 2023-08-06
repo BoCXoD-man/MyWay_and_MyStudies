@@ -1,6 +1,7 @@
 ### Сhapters:
 
 - 375 [Guess Number Higher or Lower II](#guess-number-higher-or-lower-ii)
+- 383 [Ransom Note](#ransom-note)
 - 412 [Fizz Buzz](#fizz-buzz)
 - 1342 [Number of Steps to Reduce a Number to Zero](#number-of-steps-to-reduce-a-number-to-zero)
 - 1480 [Running Sum of 1d Array](#running-sum-of-1d-array)
@@ -75,15 +76,15 @@ Return the running sum of nums.
 
 Example 1:
 
-Input: nums = [1,2,3,4]
-Output: [1,3,6,10]
-Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
+    Input: nums = [1,2,3,4]
+    Output: [1,3,6,10]
+    Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
 
 Example 2:
 
-Input: nums = [1,1,1,1,1]
-Output: [1,2,3,4,5]
-Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
+    Input: nums = [1,1,1,1,1]
+    Output: [1,2,3,4,5]
+    Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1].
 
 # My Decision:
 
@@ -185,6 +186,7 @@ Example 3:
     Input: n = 15
     Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
 
+# My Decision:
 ```python
 class Solution(object):
     def fizzBuzz(self, n):
@@ -249,6 +251,7 @@ Constraints:
 
     0 <= num <= 106
 
+# My Decision:
 
 ```python
 class Solution(object):
@@ -267,4 +270,58 @@ class Solution(object):
                 steps += 1
 
         return steps
+```
+<hr>
+<hr>
+
+## Ransom Note
+
+Difficulty: Easy
+
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+Each letter in magazine can only be used once in ransomNote.
+
+ 
+
+Example 1:
+
+    Input: ransomNote = "a", magazine = "b"
+    Output: false
+
+Example 2:
+
+    Input: ransomNote = "aa", magazine = "ab"
+    Output: false
+
+Example 3:
+
+    Input: ransomNote = "aa", magazine = "aab"
+    Output: true
+
+
+# My Decision:
+
+```python
+from collections import Counter
+
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        magazine_dict = {}
+
+        for char in magazine:
+            magazine_dict[char] = magazine_dict.get(char, 0) + 1
+        
+        for char in ransomNote:
+            if char in magazine_dict and magazine_dict[char] > 0:
+                magazine_dict[char] -= 1
+            else:
+                return False
+
+        return True
 ```

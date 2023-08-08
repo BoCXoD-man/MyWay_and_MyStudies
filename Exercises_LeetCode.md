@@ -303,6 +303,8 @@ Example 3:
 # My Decision:
 
 ```python
+# First solution example
+
 from collections import Counter
 
 class Solution(object):
@@ -324,4 +326,56 @@ class Solution(object):
                 return False
 
         return True
+
+
+# Second solution example
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        magazine_dict = {}
+    
+        for char in magazine:
+            magazine_dict[char] = magazine_dict.get(char, 0) + 1
+        
+        for char in ransomNote:
+            if char in magazine_dict and magazine_dict[char] > 0:
+                magazine_dict[char] -= 1
+            else:
+                return False
+        return True
+
+
+# The first solution came to me as soon as I read the condition of the problem, the second one came later, when I tried to optimize the solution and make it faster.
+```
+
+<hr>
+<hr>
+
+## Шаблон
+
+Difficulty: Easy
+
+
+# My Decision:
+
+```python
+
+```
+
+<hr>
+<hr>
+
+## Шаблон
+
+Difficulty: Easy
+
+
+# My Decision:
+
+```python
+
 ```
